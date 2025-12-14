@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Tutorial</title>
+</head>
+<body>
+<button onclick="
+     console.log(`Cart Quantity: ${cartQuantity}`);
+     ">Show Quantity</button>
+
+<button onclick="
+cartQuantity++;
+
+console.log(`Cart Quantity: ${cartQuantity}`);
+">Add to Cart</button>
+<button onclick="
+cartQuantity += 2;
+console.log(`cartQuantity ${cartQuantity}`)
+">+2</button>
+     <button onclick="
+          cartQuantity += 3;
+console.log(`cartQuantity ${cartQuantity}`);
+     ">+3</button>
+     <button onclick="
+     cartQuantity = 0;
+     console.log('Cart was Reset! You can re-add items.')
+     console.log(`cartQuantity ${cartQuantity}`);
+	 ">Reset Cart</button>
+<script>
+     if(false) {
+          console.log("Hey there")
+     }else{
+          console.log("It's absolutely not true reason why it's running this code")
+     }
+    let cartQuantity = 0;
+</script>
+    
+</body>
+</html>
