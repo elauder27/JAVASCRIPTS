@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Rock Paper Sciccor game</title>
-<!--     <script type="module" src="js/coin-flip.js" defer></script>
- --></head>
+ </head>
 <body>
             <p>Rock Paper Sciccors </p>
             <button onclick="
@@ -22,13 +21,20 @@
                 onclick="
                 playGame('Sciccors')
                                 ">Sciccors</button> 
+                                <p class="js-result"></p>
+                                <p class="js-moves"></p>
+                                <p class="js-score"></p>
+
+
+
                                 <button
                                 onclick="score.Wins = 0;
                                 score.Loss = 0; score.Ties = 0;
-                                localStorage.removeItem('score');"
+                                localStorage.removeItem('score');
+                                updateScoreElement();
+                                "
                                 >Reset Score</button> 
-
-     
+                              <button>Auto play</button>
             <script> 
 
              const score = (JSON.parse(localStorage.getItem('score'))) || {
@@ -36,6 +42,8 @@
                 Loss: 0, 
                 Ties: 0,
             }
+
+          updateScoreElement();
 
 /*if (!score){
     score = {
@@ -61,7 +69,7 @@
                         if (computerChoice === 'Paper') {
                 result = 'Its a Tie'
             }else if (computerChoice === 'Rock'){
-                result = 'You win! Badass'
+                result = 'You Win! Badass'
             }else if (computerChoice === 'Sciccors') {
                 result = 'You Lose'
             }
@@ -69,13 +77,13 @@
         if (computerChoice === 'Sciccors'){ 
                     result ='Its a Tie';
                 }else if (computerChoice === 'Paper'){
-                    result = 'You win! Badass';
+                    result = 'You Win! Badass';
                 }else if(computerChoice === 'Rock'){
                     result = 'You Lose';
         }
     }
  
-                    if(result === 'You win! Badass'){
+                    if(result === 'You Win! Badass'){
                         score.Wins += 1
                     }else if(result === 'You Lose'){
                         score.Loss += 1
@@ -83,16 +91,20 @@
                         score.Ties += 1
                     }
                               localStorage.setItem('score', JSON.stringify(score));
+                updateScoreElement();
 
-            
-                    alert(`you picked ${playerMove}, Computer Picked ${computerChoice}. \n${result}.
-Wins: ${score.Wins}, Loss: ${score.Loss}, Ties: ${score.Ties}`)
+            document.querySelector('.js-result').innerHTML = result;
 
+            document.querySelector('.js-moves').innerHTML = `you picked ${playerMove} - Computer Picked ${computerChoice}`; 
+
+                
     }       
 
-    
-    //return statements lets us get a value out of a function
-    //Also  ends the function immediately
+    function updateScoreElement(){
+          document.querySelector('.js-score').innerHTML = `Wins: ${score.Wins}, Loss: ${score.Loss}, Ties: ${score.Ties}`
+
+    }
+
   function pickComputerMove() {
      const randomNumber = Math.random();
 let computerChoice = ''
@@ -112,9 +124,3 @@ let computerChoice = ''
     </script>
 </body>
 </html>
- 
-<!--SHORTCUTS : Ternay operators ?,
- OR operator ||,
-AND Operator,
-Guard operator &&
-Default operator ||-->

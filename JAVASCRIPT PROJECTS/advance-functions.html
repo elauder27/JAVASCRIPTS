@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions</title>
+</head>
+<button
+onclick="setTimeout(function(){
+    document.querySelector('.js-finish-button').innerHTML = 'Finished!'
+}, 1000)
+document.querySelector('.js-finish-button').innerHTML = 'Loading...'"
+class="js-finish-button"
+>Start</button>
+
+<button class="js-click-button"
+>Click</button>
+
+    <script>
+const clickElement = document.querySelector('.js-click-button')
+
+clickElement.addEventListener('click' , () => {
+    console.log('Clicked!')
+})
+/*event listener method that listens for events on an element
+add event listener lets us add multiiple listeners to an event
+we can also remove event listeners using removeEventListener method which also takes 2 parameters
+*/
+
+        /*
+        function greeting (){
+            console.log('Hello Esther')
+        }
+        greeting(); // calling/running the function 
+
+        
+        //functions are also values, and can be saved in variables and objects
+        const object1= {
+            name: 'Esther',
+            age: function() //this is a method
+            {
+                console.log(19);
+            }
+        };
+        object1.age();
+
+        const num = 2;
+        const function1 = function(){ //a function without a name is an anonymous function
+            console.log('Hello, THis is me checking functions as values')
+        };
+        console.log(function1);
+        console.log(function1.length)
+
+        //we can pass a value to a function
+        function number(value){
+            console.log(value)
+        }
+        number(5)
+
+        //we can pass a function into another function
+        function callFunction(func){
+            func();
+        }
+        callFunction(function () {
+            console.log('This is a function passed as a value')//this is a callback function
+        })
+        
+
+        setTimeout(function () {
+          console.log('Timeout!')  
+        }, 4000)//built in function that takes two arguments, a function and a time in milliseconds
+        console.log('This is after the timeout'); //asynchronous behaviour
+
+        setInterval(function (){
+            console.log('interval'), 3000
+        });
+        console.log('This is after the interval');
+        
+
+
+        // another way to loop through an array is by using forEach method
+        [
+            'Apple',
+            'Banana',
+            'Mango'
+        ].forEach(function(value, index) {
+         if(value === 'Banana'){
+            return; // this will skip the current iteration
+         }
+
+            console.log(value, index)
+        })
+
+
+        const add = () =>{
+             console.log(2 + 3)     
+            }
+        add();
+        add();
+ 
+
+    const arrowFunction = () => {
+        console.log('This is an arrow function')
+    }
+    arrowFunction();
+
+    const object1 = {
+        method: () => {
+
+        },
+        method2() { // The shorthand method syntax for defining methods in objects
+
+        }
+    }
+*/
+//Array mehods that take functions as arguments
+const array = [1, 2, -5,].filter((value , index) =>{
+    return value >= 0
+})
+
+ console.log(array)
+
+ const num =[1, 2, 3, 4, 5].map((value) => {
+    return value * 3
+ })
+
+ console.log(num)
+
+ /*Main idea of JavaScript 
+ Save the data 
+ Generate the HTML 
+ Make it interactive
+ */
+            </script>
+</body>
+</html>

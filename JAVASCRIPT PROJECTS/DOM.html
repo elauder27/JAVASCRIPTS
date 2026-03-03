@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <button>Hello</button>
+    <button class=" btn2">What's next?</button>
+
+    <script>
+        //document.querySelector - allows us to get any element  from the page and put it inside javascript
+        console.log(document.querySelector('button').innerHTML)
+        document.querySelector('button')
+            .innerHTML = 'I changed you hehe!'
+        console.log(document.querySelector('.btn2'))
+
+        //HTML elements are objects in javascript 
+        //DOM are  built-in objects
+        //Document Object represent models on the webpage 
+        /*
+        DOM syntax
+        the DOM also has methods
+        it is linked to the webpage
+        -we can use it to manipulate the webpage
+        
+     console.log(document.title);
+     
+    console.log(document.body);
+    document.body.innerHTML = '<h1>welcome to Esther\'s DOM tutorial</h1>';
+*/
+        /*document.body.innerHTML = 'hello';
+        document.title = 'Goodbye';
+        */
+
+
+    </script>
+
+</body>
+
+</html>

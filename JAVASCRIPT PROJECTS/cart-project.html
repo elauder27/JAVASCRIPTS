@@ -13,28 +13,50 @@
 <button onclick="
 cartQuantity++;
 
-console.log(`Cart Quantity: ${cartQuantity}`);
-">Add to Cart</button>
-<button onclick="
-cartQuantity += 2;
-console.log(`cartQuantity ${cartQuantity}`)
-">+2</button>
+     console.log(`Cart Quantity: ${cartQuantity}`);
+     ">Add to Cart</button>
      <button onclick="
-          cartQuantity += 3;
-console.log(`cartQuantity ${cartQuantity}`);
-     ">+3</button>
-     <button onclick="
-     cartQuantity = 0;
-     console.log('Cart was Reset! You can re-add items.')
+     cartQuantity += 2;
+     console.log(`cartQuantity ${cartQuantity}`)
+     ">+2</button>
+          <button onclick="
+               cartQuantity += 3;
      console.log(`cartQuantity ${cartQuantity}`);
-	 ">Reset Cart</button>
-<script>
-     if(false) {
-          console.log("Hey there")
-     }else{
-          console.log("It's absolutely not true reason why it's running this code")
+          ">+3</button>
+          <button onclick="
+          cartQuantity = 0;
+          console.log('Cart was Reset! You can re-add items.')
+          console.log(`cartQuantity ${cartQuantity}`);
+          ">Reset Cart</button>
+     <script>
+          if(false) {
+               console.log("Hey there")
+          }else{
+               console.log("It's absolutely not true reason why it's running this code")
+          }
+     let cartQuantity = 0;
+ 
+     const product1 = {
+          name: 'Basketball',
+          price: 2059,
+
      }
-    let cartQuantity = 0;
+     const product2 = {
+          name: 'Soccer Ball',
+          price: 1029,
+     }
+      function comparePrices(product1, product2){
+          if(product1.price  > product2.price){
+               console.log(`${product1.name}` + ' is more expensive than ' + `${product2.name}`)
+          }else{
+               console.log(`${product2.name}` + ' is more expensive than ' + `${product1.name}`)
+          }
+
+      }
+     comparePrices (product1, product2);
+     product1['delivery-time'] = '3 days'
+     product1.price = 2059 + 500
+     console.log(product1)
 </script>
     
 </body>
